@@ -8,6 +8,14 @@ typedef struct {
     const char* json;
 }lept_context;
 
+/**
+ * @brief 该函数复制跳过json字符串中的空白字符
+ * 
+ * 在处理json字符串时, 通常会遇到空白字符, 例如空格, 制表符, 换行符等, 
+ * 该函数的作用就是跳过这些空白字符,只关注有效字符
+ * 
+ * @param c 一个lept_context结构体指针, 该结构体包含了一个json字符串 
+ */
 static void lept_parse_whitespace(lept_context* c) {
     const char *p = c->json;
     while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r')
